@@ -1,4 +1,4 @@
-#' Title
+#' Invoke model
 #'
 #' @param model_name Name of the model
 #' @param data_for_inference The data needed for the model

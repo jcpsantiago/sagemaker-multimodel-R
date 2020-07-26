@@ -1,4 +1,4 @@
-#' Title
+#' List currently loaded models
 #'
 #' @param req Request object
 #' @param res Response object

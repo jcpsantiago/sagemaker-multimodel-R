@@ -1,10 +1,10 @@
-#' Title
+#' Information from loaded model
 #'
-#' @param model_name
-#' @param req
-#' @param res
+#' @param model_name Name of the model
+#' @param req Request object
+#' @param res Response object
 #'
-#' @return Gets a loaded model information
+#' @return Gets information from a loaded model
 #' @export
 get_model <- function(model_name, req, res) {
   if (!model_name %in% loaded_models$modelName) {

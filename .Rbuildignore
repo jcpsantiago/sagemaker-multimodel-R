@@ -2,5 +2,8 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^\.github$
-^example_model$
+^example_models$
 ^data-raw$
+^Dockerfile$
+^start_api\.R$
+^\.here$

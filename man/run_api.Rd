@@ -4,7 +4,7 @@
 \alias{run_api}
 \title{Run the Sagemaker multi-model API}
 \usage{
-run_api(.host = "0.0.0.0", .port = 8000, ...)
+run_api(.host = "0.0.0.0", .port = 8080, ...)
 }
 \arguments{
 \item{.host}{IP of the host, Default: 0.0.0.0}

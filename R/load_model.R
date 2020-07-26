@@ -1,4 +1,4 @@
-#' Title
+#' Load model
 #'
 #' @param model_name Name of the model
 #' @param url Path to model, example `/opt/ml/models/{model_name}/model`
@@ -7,8 +7,6 @@
 #'
 #' @return Assigns a variable in the global environment called `model_name`
 #' @export
-#'
-#' @examples
 load_model <- function(model_name, url, req, res) {
   if (model_name %in% loaded_models) {
     message("Model `", model_name, "` is already loaded!")

@@ -2,7 +2,7 @@
 % Please edit documentation in R/invoke_model.R
 \name{invoke_model}
 \alias{invoke_model}
-\title{Title}
+\title{Invoke model}
 \usage{
 invoke_model(model_name, data_for_inference, req, res)
 }
@@ -19,5 +19,5 @@ invoke_model(model_name, data_for_inference, req, res)
 A prediction from `model_name`.
 }
 \description{
-Title
+Invoke model
 }

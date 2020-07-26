@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_model.R
 \name{list_model}
 \alias{list_model}
-\title{Title}
+\title{List currently loaded models}
 \usage{
 list_model(req, res)
 }
@@ -15,5 +15,5 @@ list_model(req, res)
 List of loaded models tracked in `loaded_models`
 }
 \description{
-Title
+List currently loaded models
 }

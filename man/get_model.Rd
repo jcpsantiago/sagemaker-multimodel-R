@@ -2,16 +2,20 @@
 % Please edit documentation in R/get_model.R
 \name{get_model}
 \alias{get_model}
-\title{Title}
+\title{Information from loaded model}
 \usage{
 get_model(model_name, req, res)
 }
 \arguments{
-\item{res}{}
+\item{model_name}{Name of the model}
+
+\item{req}{Request object}
+
+\item{res}{Response object}
 }
 \value{
-Gets a loaded model information
+Gets information from a loaded model
 }
 \description{
-Title
+Information from loaded model
 }

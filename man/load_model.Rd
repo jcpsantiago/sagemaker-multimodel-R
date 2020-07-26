@@ -2,7 +2,7 @@
 % Please edit documentation in R/load_model.R
 \name{load_model}
 \alias{load_model}
-\title{Title}
+\title{Load model}
 \usage{
 load_model(model_name, url, req, res)
 }
@@ -19,5 +19,5 @@ load_model(model_name, url, req, res)
 Assigns a variable in the global environment called `model_name`
 }
 \description{
-Title
+Load model
 }

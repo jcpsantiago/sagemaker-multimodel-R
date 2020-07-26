@@ -2,16 +2,18 @@
 % Please edit documentation in R/delete_model.R
 \name{delete_model}
 \alias{delete_model}
-\title{Title}
+\title{Unload loaded model}
 \usage{
-delete_model(model_name, req, res)
+delete_model(req, res)
 }
 \arguments{
-\item{res}{}
+\item{req}{Request object}
+
+\item{res}{Response object}
 }
 \value{
 Unloads a loaded model
 }
 \description{
-Title
+Unload loaded model
 }

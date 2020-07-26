@@ -7,8 +7,6 @@
 delete_model(model_name, req, res)
 }
 \arguments{
-\item{req}{}
-
 \item{res}{}
 }
 \value{

@@ -15,7 +15,7 @@ load_model <- function(model_name, url, req, res) {
     res$status <- 409
     return("")
   }
-  
+
   xgb_model <- tryCatch(
     {
       xgb <- xgboost::xgb.load(url)
@@ -27,13 +27,21 @@ load_model <- function(model_name, url, req, res) {
       return("")
     },
     finally = function(xgb) {
-      print(class(xgb))
+      message("Model `", model_name, "` is loaded.")
     }
   )
 
-  message("Adding `", model_name, "` to list of loaded models")
-  loaded_models <<- c(loaded_models, model_name)
+  if (res$status != 200) {
+    return("")
+  }
+
+  message("Adding `", model_name, "` with url `", url, "` to list of loaded models")
+  new_model <- data.frame(
+    modelName = model_name,
+    modelUrl = url
+  )
+  loaded_models <<- rbind(loaded_models, new_model)
   assign(model_name, xgb_model, envir = globalenv())
-  
+
   return("")
 }

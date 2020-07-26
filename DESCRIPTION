@@ -1,16 +1,18 @@
-Package: plungrexample
-Title: Plunging That Data
+Package: sagemakerMultiModelR
+Title: Sagemaker Multi Model API
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
+    person(given = "João",
+           family = "Santiago",
            role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+           email = "joaocpsantiago@gmail.com")
+Description: Example implementation of the Sagemaker multimodel server in R.
+License: MIT + file LICENSE
 Imports:
     plumber,
-    plungr
+    xgboost
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
+Suggests: 
+    testthat

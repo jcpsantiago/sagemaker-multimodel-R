@@ -2,7 +2,7 @@
 % Please edit documentation in R/plumber_entrypoint.R
 \name{run_api}
 \alias{run_api}
-\title{Run the plungrexample API}
+\title{Run the Sagemaker multi-model API}
 \usage{
 run_api(.host = "0.0.0.0", .port = 8000, ...)
 }
@@ -17,10 +17,11 @@ run_api(.host = "0.0.0.0", .port = 8000, ...)
 A running Plumber API
 }
 \description{
-Run the plungrexample API
+Run the Sagemaker multi-model API
 }
 \examples{
 \dontrun{
 run_api()
-run_api(.host = "127.0.0.1", port = 4242)}
+run_api(.host = "127.0.0.1", port = 4242)
+}
 }

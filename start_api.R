@@ -1,9 +1,9 @@
-# This file is used to start the API after e.g. checking if the correct
-# environmental variables are set, log startup messages, connect to databases, etc
-# You can use run_api() directly without this script though.
+message("Starting sagemakerMultiModelR ", packageVersion("sagemakerMultiModelR"))
 
-message("Starting plungerexample ", packageVersion("plungrexample"))
+# Needed for keeping track of models loaded
+loaded_models <- data.frame(
+  modelName = character(),
+  modelUrl  = character()
+)
 
-loaded_models <- character()
-
-plungrexample::run_api()
+sagemakerMultiModelR::run_api()

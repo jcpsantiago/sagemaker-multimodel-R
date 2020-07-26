@@ -2,6 +2,8 @@
 
 export(delete_model)
 export(get_model)
+export(invoke_model)
+export(list_model)
 export(load_model)
 export(log_request)
 export(ping)

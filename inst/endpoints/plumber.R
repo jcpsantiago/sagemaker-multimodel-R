@@ -1,25 +1,33 @@
-library(plungrexample)
+library(sagemakerMultiModelR)
 
-# TODO: function to automatically create the @param fields from the endpoint_functions definitions
+#* @apiTitle Sagemaker Multi-Model API
+#* @apiDescription This API follows the Sagemaker contract for multiple models found in https://docs.aws.amazon.com/sagemaker/latest/dg/mms-container-apis.html
 
-#* @apiTitle Plumber Example API
-
-#* Echo back the input
-#* @param msg The message to echo
-#* @get /echo
-plungrexample::ping
+#* Healthcheck
+#* @get /ping
+sagemakerMultiModelR::ping
 
 #* LOAD model
 #* @serializer unboxedJSON
 #* @post /models
-plungrexample::load_model
+sagemakerMultiModelR::load_model
 
-#* DELETE model
+#* LIST model
 #* @serializer unboxedJSON
-#* @delete /models/<model_name>
-plungrexample::delete_model
+#* @get /models
+sagemakerMultiModelR::list_model
 
 #* GET model
 #* @serializer unboxedJSON
 #* @get /models/<model_name>
-plungrexample::get_model
+sagemakerMultiModelR::get_model
+
+#* UNLOAD model
+#* @serializer unboxedJSON
+#* @delete /models/<model_name>
+sagemakerMultiModelR::delete_model
+
+#* INVOKE model
+#* @serializer unboxedJSON
+#* @post /models/<model_name>/invoke
+sagemakerMultiModelR::invoke_model

@@ -4,9 +4,11 @@
 \alias{delete_model}
 \title{Unload loaded model}
 \usage{
-delete_model(req, res)
+delete_model(model_name, req, res)
 }
 \arguments{
+\item{model_name}{Name of the model}
+
 \item{req}{Request object}
 
 \item{res}{Response object}

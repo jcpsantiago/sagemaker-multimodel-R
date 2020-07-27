@@ -1,6 +1,6 @@
 #' Load model
 #'
-#' @param model_name Name of the model
+#' @param model_name Name of the model to load
 #' @param url Path to model, example `/opt/ml/models/{model_name}/model`
 #' @param req Request object
 #' @param res Response object
@@ -14,9 +14,12 @@ load_model <- function(model_name, url, req, res) {
     return("")
   }
 
+  message("Trying to load model `", model_name, "` from `", url, "`")
+  
   xgb_model <- tryCatch(
     {
-      xgb <- xgboost::xgb.load(url)
+      # .tar.gz files unpack into `/opt/ml/models/<model_name>/model/`
+      xgb <- xgboost::xgb.load(paste0(url, "/model.xgb"))
     },
     error = function(e) {
       message("Model `", model_name, "` couldn't be loaded!")
@@ -38,6 +41,8 @@ load_model <- function(model_name, url, req, res) {
     modelName = model_name,
     modelUrl = url
   )
+  
+  # loaded_models lives in the global env, can't pass it as a fun arg
   loaded_models <<- rbind(loaded_models, new_model)
   assign(model_name, xgb_model, envir = globalenv())
 

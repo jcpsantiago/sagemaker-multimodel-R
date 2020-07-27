@@ -21,10 +21,10 @@ no_cyl <- xgboost::xgboost(
 
 xgboost::xgb.save(
   model = generic,
-  fname = here::here("example_model/generic/model")
+  fname = here::here("example_models/generic/model/model.xgb")
 )
 
 xgboost::xgb.save(
   model = no_cyl,
-  fname = here::here("example_model/no_cyl/model")
+  fname = here::here("example_models/no_cyl/model/model.xgb")
 )

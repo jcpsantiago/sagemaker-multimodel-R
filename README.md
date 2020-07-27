@@ -92,8 +92,7 @@ import json
 runtime = boto3.client('runtime.sagemaker')
 
 def lambda_handler(event, context):
-    
-    print("event", event)
+
     response = runtime.invoke_endpoint(EndpointName = '<your_endpoint_name>',
                                        ContentType = 'application/json',
                                        Body = json.dumps(event),

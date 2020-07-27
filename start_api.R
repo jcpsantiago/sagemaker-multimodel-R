@@ -1,4 +1,9 @@
-message("Starting sagemakerMultiModelR ", packageVersion("sagemakerMultiModelR"))
+# needed for Sagemaker compliance when more than 1 container is used in series
+sagemaker_port <- if (Sys.getenv("SAGEMAKER_BIND_TO_PORT") != "") {
+  as.integer(Sys.getenv("SAGEMAKER_BIND_TO_PORT"))
+} else {
+  8080
+}
 
 # Needed for keeping track of models loaded
 loaded_models <- data.frame(
@@ -6,4 +11,8 @@ loaded_models <- data.frame(
   modelUrl  = character()
 )
 
-sagemakerMultiModelR::run_api()
+args <- commandArgs()
+if (any(grepl("serve", args))) {
+  message("Starting sagemakerMultiModelR ", packageVersion("sagemakerMultiModelR"))
+  sagemakerMultiModelR::run_api(.port = sagemaker_port)
+}

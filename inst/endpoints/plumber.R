@@ -7,6 +7,11 @@ library(sagemakerMultiModelR)
 #* @get /ping
 sagemakerMultiModelR::ping
 
+#' Preprocess input data
+#' @serializer unboxedJSON
+#' @post /invocations
+sagemakerMultiModelR::preprocess
+
 #* LOAD model
 #* @serializer unboxedJSON
 #* @post /models

@@ -7,7 +7,7 @@
 load_model(model_name, url, req, res)
 }
 \arguments{
-\item{model_name}{Name of the model}
+\item{model_name}{Name of the model to load}
 
 \item{url}{Path to model, example `/opt/ml/models/{model_name}/model`}
 

@@ -19,7 +19,11 @@ invoke_model <- function(model_name, data_for_inference, req, res) {
 
   message("Predicting using model `", model_name, "`")
   prediction <- paste(
-    stats::predict(eval(parse(text = model_name)), data_matrix, row.names = FALSE)
+    stats::predict(
+      eval(parse(text = paste0("`", model_name, "`"))),
+      data_matrix,
+      row.names = FALSE
+    )
   )
 
   message("Model `", model_name, "` predicted score: ", prediction)

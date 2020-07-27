@@ -82,7 +82,7 @@ With these elements in place, you can now create a Sagemaker Model pointing to
 the ECR image and the S3 bucket, a Sagemaker Endpoint Configuration and finally
 a Sagemaker Endpoint.
 
-To finally use the Endpoint you still need to create a [Lambda](https://aws.amazon.com/lambda/) to call the endpoint:
+To finally use the Endpoint you still need to create a [Lambda](https://aws.amazon.com/lambda/) to call the endpoint (no way to avoid Python here AFAIK):
 
 ```python
 import os

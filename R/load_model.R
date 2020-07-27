@@ -15,7 +15,7 @@ load_model <- function(model_name, url, req, res) {
   }
 
   message("Trying to load model `", model_name, "` from `", url, "`")
-  
+
   xgb_model <- tryCatch(
     {
       # .tar.gz files unpack into `/opt/ml/models/<model_name>/model/`
@@ -41,7 +41,7 @@ load_model <- function(model_name, url, req, res) {
     modelName = model_name,
     modelUrl = url
   )
-  
+
   # loaded_models lives in the global env, can't pass it as a fun arg
   loaded_models <<- rbind(loaded_models, new_model)
   assign(model_name, xgb_model, envir = globalenv())

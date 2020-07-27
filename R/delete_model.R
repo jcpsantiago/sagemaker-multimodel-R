@@ -1,5 +1,5 @@
 #' Unload loaded model
-#' 
+#'
 #' @param model_name Name of the model
 #' @param req Request object
 #' @param res Response object

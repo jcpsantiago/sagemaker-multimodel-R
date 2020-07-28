@@ -5,12 +5,6 @@ sagemaker_port <- if (Sys.getenv("SAGEMAKER_BIND_TO_PORT") != "") {
   8080
 }
 
-# Needed for keeping track of models loaded
-loaded_models <- data.frame(
-  modelName = character(),
-  modelUrl  = character()
-)
-
 args <- commandArgs()
 if (any(grepl("serve", args))) {
   message("Starting sagemakerMultiModelR ", packageVersion("sagemakerMultiModelR"))

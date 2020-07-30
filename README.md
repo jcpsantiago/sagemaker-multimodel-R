@@ -25,14 +25,14 @@ Use this implementation of the Multi-Model server if you want to use Sagemaker a
 ### Locally
 To use the server locally build the docker container and launch it:
 
-```
+```shell
 docker build -t sagemaker-multimodel-server . && \
 docker run -p 8080:8080 sagemaker-multimodel-server serve
 ```
 
 tell the container to load a model (modify the path first!):
 
-```
+```shell
 curl --location --request POST 'http://localhost:8080/models' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -43,7 +43,7 @@ curl --location --request POST 'http://localhost:8080/models' \
 
 you should receive a `200`, which means the container is ready for scoring:
 
-```
+```shell
 curl --location --request POST 'http://localhost:8080/models/no_cyl/invoke' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -71,7 +71,7 @@ If you don't, please take a look at their [docs](https://docs.aws.amazon.com/sag
 You'll need an [Elastic Container Registry](https://aws.amazon.com/ecr/) (ECR) repository to keep the docker image used in Sagemaker.
 After creating the repository build the image locally, then tag and push it to the ECR repository
 
-```
+```shell
 > docker tag sagemaker-multimodel-server <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<your_repo>
 > docker push <aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/<your_repo>
 ```

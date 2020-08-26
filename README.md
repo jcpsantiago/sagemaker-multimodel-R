@@ -68,6 +68,9 @@ curl --location --request POST 'http://localhost:8080/models/no_cyl/invoke' \
 I'll assume you have an AWS account and know how Sagemaker works in general.
 If you don't, please take a look at their [docs](https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-hosting.html).
 
+_Example of a full implementation_
+![Image of AWS Sagemaker infrastructure](man/figures/aws_sagemaker_infrastructure.png)
+
 You'll need an [Elastic Container Registry](https://aws.amazon.com/ecr/) (ECR) repository to keep the docker image used in Sagemaker.
 After creating the repository build the image locally, then tag and push it to the ECR repository
 

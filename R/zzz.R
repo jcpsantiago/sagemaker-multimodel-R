@@ -1,7 +1,8 @@
 .onLoad <- function(libname, pkgname) {
+  .sage <- new.env()
+  
   # Needed for keeping track of models loaded
-  message("Loading `loaded_models` into Global Environment.")
-  loaded_models <<- data.frame(
+  .sage$loaded_models <- data.frame(
     modelName = character(),
     modelUrl  = character()
   )

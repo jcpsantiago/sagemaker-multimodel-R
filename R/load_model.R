@@ -8,7 +8,7 @@
 #' @return Assigns a variable in the global environment called `model_name`
 #' @export
 load_model <- function(model_name, url, req, res) {
-  if (model_name %in% loaded_models) {
+  if (model_name %in% .sage$loaded_models$modelName) {
     message("Model `", model_name, "` is already loaded!")
     res$status <- 409
     return("")
@@ -42,9 +42,9 @@ load_model <- function(model_name, url, req, res) {
     modelUrl = url
   )
 
-  # loaded_models lives in the global env, can't pass it as a fun arg
-  loaded_models <<- rbind(loaded_models, new_model)
-  assign(model_name, xgb_model, envir = globalenv())
+  # loaded_models lives in the .sage env, see zzz.R
+  .sage$loaded_models <- rbind(.sage$loaded_models, new_model)
+  assign(model_name, xgb_model, envir = .sage)
 
   return("")
 }

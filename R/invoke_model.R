@@ -8,7 +8,7 @@
 #' @return A prediction from `model_name`.
 #' @export
 invoke_model <- function(model_name, data_for_inference, req, res) {
-  if (!model_name %in% loaded_models$modelName) {
+  if (!model_name %in% .sage$loaded_models$modelName) {
     message("Model `", model_name, "` is not loaded!")
     res$status <- 404
     return("")
@@ -25,11 +25,22 @@ invoke_model <- function(model_name, data_for_inference, req, res) {
       row.names = FALSE
     )
   )
+  
+  model_info <- subset(.sage$loaded_models, modelName == model_name)
+  
+  threshold <- as.double(model_info$threshold)
+  predicted_class <- ifelse(
+    predicted_score > threshold,
+    "fraud",
+    "good"
+  )
 
+  predicted_score <- signif(predicted_score, 5)
+  
   message("Model `", model_name, "` predicted score: ", prediction)
   response <- list(
     model_name = model_name,
-    score = prediction
+    score = predicted_score
   )
   return(response)
 }

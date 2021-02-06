@@ -9,7 +9,7 @@ list_model <- function(req, res) {
   message("Returning currently loaded models...")
 
   currently_loaded_models <- list(
-    models = loaded_models
+    models = .sage$loaded_models[c("modelName", "modelUrl")]
   )
 
   return(currently_loaded_models)

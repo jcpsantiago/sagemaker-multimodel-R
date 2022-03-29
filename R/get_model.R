@@ -8,7 +8,11 @@
 #' @export
 get_model <- function(model_name, req, res) {
   if (!model_name %in% .sage$loaded_models$modelName) {
-    message("Model `", model_name, "` is not loaded!")
+    message(
+      "Model `", req$original_model_name,
+      "` (", model_name, ") is not loaded!"
+    )
+    
     res$status <- 404
     return("")
   }

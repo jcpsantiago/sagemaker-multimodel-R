@@ -37,7 +37,12 @@ invoke_model <- function(model_name, data_for_inference, req, res) {
 
   predicted_score <- signif(predicted_score, 5)
   
-  message("Model `", model_name, "` predicted score: ", prediction)
+  message(
+    "Model `", req$original_model_name,
+    "` (", model_name, ") predicted score for ", invoice_uuid, ": ", predicted_score,
+    " (", predicted_class, ")"
+  )
+  
   response <- list(
     model_name = model_name,
     score = predicted_score

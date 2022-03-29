@@ -1,6 +1,6 @@
-FROM rocker/r-ver:4.0.0 
+FROM rocker/r-ver:4.1.2
 
-MAINTAINER Joao Santiago <joaocpsantiago@gmail.com>
+MAINTAINER Joao Santiago <me@jcpsantiago.xyz>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
       #needed for git2r
